@@ -53,8 +53,8 @@ public class WeekBoroughWritable implements WritableComparable<WeekBoroughWritab
 			if (this.year.compareTo(o.year) > 0){
 				return 1;
 			}
-			else if (this.year.compareTo(o.year) ==0){
-				return this.week.compareTo(week);
+			else if (this.year.compareTo(o.year) == 0){
+				return this.week.compareTo(o.week);
 			}
 			else{
 				return -1;
