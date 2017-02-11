@@ -33,6 +33,9 @@ public class AccidentsBoroughMapper extends MapReduceBase
 		int killed = Integer.valueOf(parts[CSV.NUMBER_OF_PERSONS_KILLED]);
 		// get borough
 		String borough = parts[CSV.BOROUGH];
+		// discard missing borough
+		if (borough.length()==0)
+			return;
 		// obtain week number and year
 		Date date = new Date();
 		String format = "MM/dd/yyyy";
