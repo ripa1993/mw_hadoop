@@ -3,6 +3,7 @@ package accidentsBorough;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapred.FileInputFormat;
 import org.apache.hadoop.mapred.FileOutputFormat;
 import org.apache.hadoop.mapred.JobClient;
@@ -31,11 +32,12 @@ Configuration conf = getConf();
         job.setReducerClass(AccidentsBoroughReducer.class);
         
         job.setInputFormat(TextInputFormat.class);
+
+        job.setMapOutputKeyClass(WeekBoroughWritable.class);
+        job.setMapOutputValueClass(IntWritable.class);
         
         job.setOutputFormat(TextOutputFormat.class);
-        // week
         job.setOutputKeyClass(WeekBoroughWritable.class);
-        // number of accidents
 		job.setOutputValueClass(AvgAccidentsAndLetalWritable.class);
 
 		JobClient.runJob(job);
