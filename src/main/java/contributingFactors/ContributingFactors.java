@@ -3,6 +3,7 @@ package contributingFactors;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.FileInputFormat;
 import org.apache.hadoop.mapred.FileOutputFormat;
@@ -30,6 +31,9 @@ public class ContributingFactors extends Configured implements Tool {
 		job.setReducerClass(ContributingFactorsReducer.class);
 		
 		job.setInputFormat(TextInputFormat.class);
+		
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(IntWritable.class);
 		
 		job.setOutputFormat(TextOutputFormat.class);
 		job.setOutputKeyClass(Text.class);

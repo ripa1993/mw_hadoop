@@ -21,7 +21,8 @@ public class ContributingFactorsReducer extends MapReduceBase
 			deaths += values.next().get();
 			count++;
 		}
-		float avg = deaths/count;
+		System.out.println("DEBUG: accidents "+count+" deaths "+deaths+" for "+key.toString());
+		float avg = ((float)deaths/(float)count);
 		output.collect(key, new IncidentsAndDeathsWritable(count, avg));
 		
 	}
