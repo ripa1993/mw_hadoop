@@ -15,15 +15,18 @@ public class ContributingFactorsReducer extends MapReduceBase
 
 	public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IncidentsAndDeathsWritable> output,
 			Reporter reporter) throws IOException {
-		int count = 0;
-		int deaths = 0;
+		int accidents = 0;
+		int lethal = 0;
 		while (values.hasNext()) {
-			deaths += values.next().get();
-			count++;
+			int deaths = values.next().get();
+			if(deaths>0){
+				lethal++;
+			}
+			accidents++;
 		}
-		System.out.println("DEBUG: accidents "+count+" deaths "+deaths+" for "+key.toString());
-		float avg = ((float)deaths/(float)count);
-		output.collect(key, new IncidentsAndDeathsWritable(count, avg));
+		System.out.println("DEBUG: accidents "+accidents+" deaths "+lethal+" for "+key.toString());
+		double avg = (1.0d*lethal)/accidents;
+		output.collect(key, new IncidentsAndDeathsWritable(accidents, avg));
 		
 	}
 
