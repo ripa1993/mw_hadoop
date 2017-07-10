@@ -7,6 +7,11 @@ import java.io.IOException;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Writable;
 
+/**
+ * Contains two integers: number of accidents and number of lethal accidents
+ * @author Simone Ripamonti
+ *
+ */
 public class AccidentsAndLethalAccidents implements Writable {
 	IntWritable accidents;
 	IntWritable lethalAccidents;

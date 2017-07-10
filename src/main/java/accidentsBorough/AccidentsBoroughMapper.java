@@ -16,6 +16,11 @@ import org.apache.hadoop.mapred.Reporter;
 
 import common.CSV;
 
+/**
+ * Maps [TEXT] -> [(Week, Year, Borough), 1 (letal) or 0 (non letal)]
+ * @author Simone Ripamonti
+ *
+ */
 public class AccidentsBoroughMapper extends MapReduceBase
 		implements Mapper<LongWritable, Text, WeekBoroughWritable, IntWritable> {
 

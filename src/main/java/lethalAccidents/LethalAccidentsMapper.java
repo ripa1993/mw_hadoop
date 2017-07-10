@@ -16,6 +16,9 @@ import org.apache.hadoop.mapred.Reporter;
 
 import common.CSV;
 
+/**
+ * Maps [TEXT] -> [(Week, Year), 1]
+ */
 public class LethalAccidentsMapper extends MapReduceBase
 		implements Mapper<LongWritable, Text, WeekYearWritable, IntWritable> {
 
@@ -47,7 +50,7 @@ public class LethalAccidentsMapper extends MapReduceBase
 		cal.setTime(date);
 		int week = cal.get(Calendar.WEEK_OF_YEAR);
 		int year = cal.get(Calendar.YEAR);
-		output.collect(new WeekYearWritable(week, year), new IntWritable(killed));
+		output.collect(new WeekYearWritable(week, year), new IntWritable(1));
 	}
 
 }

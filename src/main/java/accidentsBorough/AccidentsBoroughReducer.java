@@ -9,6 +9,11 @@ import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
+/**
+ * [(Week, Year, Borough), 1 (letal) or 0 (non letal)] -> [(Week, Year, Borough), count(), sum()]
+ * @author Simone Ripamonti
+ *
+ */
 public class AccidentsBoroughReducer extends MapReduceBase
 		implements Reducer<WeekBoroughWritable, IntWritable, WeekBoroughWritable, AccidentsAndLethalAccidents> {
 	// as daily avg of incidents and lethal incidents per week per borough

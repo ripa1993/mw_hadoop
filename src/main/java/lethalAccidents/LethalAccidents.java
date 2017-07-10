@@ -13,7 +13,11 @@ import org.apache.hadoop.mapred.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-
+/**
+ * Number of lethal accidents per week throughout the entire dataset
+ * @author Simone Ripamonti
+ *
+ */
 public class LethalAccidents extends Configured implements Tool {
 
 	public int run(String[] args) throws Exception {

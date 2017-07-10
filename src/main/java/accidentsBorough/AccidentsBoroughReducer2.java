@@ -11,6 +11,11 @@ import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
+/**
+ * Reduces [Borough, sum() (number lethal accidents)] -> [Borough, avg()]
+ * @author Simone Ripamonti
+ *
+ */
 public class AccidentsBoroughReducer2 extends MapReduceBase implements Reducer<Text, IntWritable, Text, DoubleWritable> {
 
 	public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, DoubleWritable> output,

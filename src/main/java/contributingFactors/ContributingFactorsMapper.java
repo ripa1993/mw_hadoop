@@ -12,6 +12,11 @@ import org.apache.hadoop.mapred.Reporter;
 
 import common.CSV;
 
+/**
+ * Maps [TEXT] -> [factor, number of killed persons]
+ * @author Simone Ripamonti
+ *
+ */
 public class ContributingFactorsMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
 	
 	public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter)

@@ -10,6 +10,11 @@ import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
+/**
+ * Reduces [factor, number of killed persons] -> [factor, count(), count(number of killed persons > 0)/count()]
+ * @author Simone Ripamonti
+ *
+ */
 public class ContributingFactorsReducer extends MapReduceBase
 		implements Reducer<Text, IntWritable, Text, IncidentsAndDeathsWritable> {
 

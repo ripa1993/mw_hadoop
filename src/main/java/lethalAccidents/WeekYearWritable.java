@@ -7,6 +7,11 @@ import java.io.IOException;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.WritableComparable;
 
+/**
+ * Contains two integers: week and year
+ * @author Simone Ripamonti
+ *
+ */
 public class WeekYearWritable implements WritableComparable<WeekYearWritable> {
 
 	private IntWritable week;

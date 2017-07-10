@@ -8,6 +8,11 @@ import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Writable;
 
+/**
+ * Contains an integer (number of accidents) and a double (avg deathly accidents)
+ * @author Simone Ripamonti
+ *
+ */
 public class IncidentsAndDeathsWritable implements Writable {
 
 	private IntWritable incidents;

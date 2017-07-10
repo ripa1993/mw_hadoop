@@ -10,6 +10,11 @@ import org.apache.hadoop.mapred.Mapper;
 import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reporter;
 
+/**
+ * Maps [(Week, Year, Borough), count(), sum()] -> [Borough, sum() (number lethal accidents)]
+ * @author Simone Ripamonti
+ *
+ */
 public class AccidentsBoroughMapper2 extends MapReduceBase implements Mapper<LongWritable,Text,Text, IntWritable>{
 
 	public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter)
